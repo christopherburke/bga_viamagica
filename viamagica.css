@@ -1,0 +1,646 @@
+/**
+ *------
+ * BGA framework: © Gregory Isabelli <gisabelli@boardgamearena.com> & Emmanuel Colin <ecolin@boardgamearena.com>
+ * ViaMagica implementation : © Christopher J. Burke <christophjburke@gmail.com>
+ *
+ * This code has been produced on the BGA studio platform for use on http://boardgamearena.com.
+ * See http://en.boardgamearena.com/#!doc/Studio for more information.
+ * -----
+ *
+ * viamagica.css
+ *
+ * ViaMagica stylesheet
+ *
+ */
+
+/* Note: you must not use any @import directive */
+
+
+/********* You can start writing your CSS below this line: **********/
+
+#vmg_centering_container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+}
+#vmg_portalstockrow {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 1360px;
+    height: 200px; /* Gets modified on setup */
+    margin: 3px;
+    background-color: lavender;
+}
+
+#vmg_portalstock {
+    position: absolute;
+    display: inline-block;
+    margin: 2px;
+    top: 1%;
+    left: 1%;
+    width: 71.4%;
+    height: 100%;
+    max-width: 960px;
+}
+
+.stockitem {
+    display: inline-block;
+    box-shadow: 3px 3px 3px #888888;
+    border-radius: 8%;
+    z-index: 1;
+}
+.stockitem_selected {
+	border: 4px solid rgb(245, 161, 36) ! important;
+}
+
+#vmg_token_container {
+    position: absolute;
+    display: inline-block;
+    left: 73.5%;
+    top: 16%;
+    width: 27%;
+    max-width: 400px;
+    height: 200px; /* Gets modified on setup */
+    margin: 0px;
+}
+#vmg_tokenhelpimage {
+    position: relative;
+    display: inline-block;
+    width: 37.5%;
+    max-width: 150px;
+    height: 100%;
+}
+
+#vmg_tokenhelpimage::before {
+    content: "";
+    background: url('img/TokenCountImage_340px.png');
+    background-size: contain;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-repeat: no-repeat;
+}
+#vmg_tokenarea {
+    position: absolute;
+    display: inline-block;
+    width: 25%;
+    max-width: 101px;
+    height: 100%;
+    max-height: 101px;
+    top: 34%;
+    left: 38%;
+}
+.vmg_tokendrawnanimation {
+    animation-name: vmg_heartbeat;
+    animation-duration: 0.5s;
+    animation-iteration-count: 2;
+}
+.vmg_tokenround {
+    border-radius: 50%;
+}
+#vmg_tokenarea::before {
+    content: "";
+    background: url('img/Card_Back_Cutout_small.png');
+    background-size: contain;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.30;
+    background-repeat: no-repeat;
+}
+#vmg_tokencount {
+    position: absolute;
+    display: inline;
+    color: rgb(201, 166, 14);
+    font-size: 18px;
+    font-weight: bold;
+    top: 8%;
+    left: 45%;
+}
+#vmg_tokencatcher {
+    position: absolute;
+    display: inline;
+    left: 73.5%;
+    top: 1%;
+    font-size: 15px !important;
+}
+#vmg_tokendiscard {
+    position: absolute;
+    display: inline-block;
+    width: 36%;
+    max-width: 150px;
+    height: 100%;
+    top: 0%;
+    left: 64%;
+}
+
+
+#vmg_rewardarea_container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 550px;
+    height: 70px;
+    margin: 2px;
+}
+#vmg_rewardarea {
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+
+#vmg_myarea_container {
+    position: relative;
+    display: inline-block;
+    width: 98%;
+    max-width: 1360px;
+    height: 200px; /* Gets modified on setup */
+    margin: 0.5%;
+    margin-top: 6px;
+    margin-bottom: 20px;
+}
+#vmg_myportalactiverow {
+    border-radius: 8px;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 200px;
+    background-color: lightcyan;
+    margin-top: 3px;
+    padding-left: 1%;
+}
+#vmg_myportalstock {
+    position: relative;
+    display: inline-block;
+    margin: 2px;
+    width: 100%;
+    height: 100%;
+    max-width: 1360px;
+    border-radius: 8px;
+}
+#vmg_myportaldonerow {
+    border-radius: 8px;
+    margin-bottom: 5px;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 200px;
+    background-color: lavender;
+    padding-left: 1%;
+    padding-top: 1%;
+}
+#vmg_myportaldonestock {
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    height: 200px;
+    overflow: visible;
+}
+.spectatorMode #vmg_myarea_container {
+    display: none;
+}
+.spectatorMode #vmg_myportalactiverow  {
+    display: none;
+}
+.spectatorMode #vmg_myportalstock  {
+    display: none;
+}
+.spectatorMode #vmg_myportaldonerow  {
+    display: none;
+}
+.spectatorMode #vmg_myportaldonestock  {
+    display: none;
+}
+.spectatorMode #vmg_playerareaname {
+    display: none;
+}
+         
+.vmg_playerareaname {
+    font-weight: bold;
+}
+
+.vmg_playerarea_container {
+    position: relative;
+    display: inline-block;
+    width: 98%;
+    max-width: 1360px;
+    height: 200px; /* Gets modified on setup */
+    margin: 0.5%;
+    margin-top: 6px;
+    margin-bottom: 20px;
+}
+.vmg_playerportalactiverow {
+    border-radius: 8px;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 200px;
+    background-color: lightcyan;
+    margin-top: 3px;
+    padding-left: 1%;
+}
+.vmg_playerportalstock {
+    position: relative;
+    display: inline-block;
+    margin: 2px;
+    width: 100%;
+    height: 100%;
+    max-width: 1360px;
+    border-radius: 8px;
+}
+.vmg_playerportaldonerow {
+    border-radius: 8px;
+    margin-bottom: 5px;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 200px;
+    background-color: lavender;
+    padding-left: 1%;
+    padding-top: 1%;
+}
+.vmg_playerportaldonestock {
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    height: 200px;
+    overflow: visible;
+}
+
+.vmg_cspot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+#vmg_mygemzone {
+    width: 70%;
+    height: 20px;
+    position: absolute;
+    top: 2px;
+    left: 35%;
+}
+#vmg_myrewardstock {
+    width: 104px;
+    height: 150px;
+    position: absolute;
+    top: 18%;
+    right: 5px;
+}
+
+.vmg_gemzone {
+    width: 70%;
+    height: 25px;
+    position: absolute;
+    top: 2px;
+    left: 35%;
+}
+.vmg_gem {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background-image: url('img/gem_20px.png');
+    background-color: transparent;
+}
+.vmg_tokendiscard_items {
+    background-image: url('img/Tokens_30px.png');
+    background-size: 700%;
+    background-color: transparent;
+    border-radius: 50%;
+}
+
+.vmg_rewardstock {
+    width: 104px;
+    height: 150px;
+    position: absolute;
+    top: 18%;
+    right: 5px;
+}
+.vmg_possiblegemplace {
+    border-color: orange;
+    border-style: solid;
+    border-width: medium;
+}
+.vmg_gemreadyselect {
+    border-color: orange;
+    border-style: solid;
+    border-width: thin;
+}
+
+.vmg_gemselected {
+    background-color: orange;
+}
+
+.vmg_animusselected {
+    background-color: orange;
+}
+
+.vmg_upz {
+    z-index: 3 !important;
+}
+.vmg_downz {
+    z-index: 2 !important;
+}
+
+.vmg_card-tooltip-container {
+    position: relative;
+    width: 460px;
+    height: 425px;
+    overflow: visible;
+}
+.vmg_card-tooltip-image {
+    position: absolute;
+    display: inline-block;
+    right: 2px;
+    top: 2px;
+    width: 340px;
+    height: 425px;
+    background: url("img/Cards_340px.jpg");
+}
+.vmg_card-tooltip-text {
+    position: absolute;
+    width: 120px;
+    height: 425px;
+    top: 2px;
+    left: 2px;
+}
+
+.vmg_card-tooltip-holderbar-stock {
+    position: absolute;
+    width: 123px;
+    height: 100px;
+}
+.vmg_card-tooltip-holderbar-active {
+    position: absolute;
+    width: 123px;
+    height: 100px;
+}
+.vmg_card-tooltip-holderbar-done {
+    position: absolute;
+    width: 123px;
+    height: 100px;
+}
+
+.vmg_refcard-tooltip-container {
+    position: relative;
+    width: 420px;
+    height: 425px;
+    overflow: visible;
+}
+.vmg_refcard-tooltip-image {
+    position: absolute;
+    display: inline-block;
+    left: 120px !important;
+    top: 2px;
+    width: 299px;
+    height: 425px;
+    background: url("img/TokenCountImage_340px.png");
+}
+.vmg_refcard-tooltip-text {
+    position: absolute;
+    width: 120px;
+    height: 425px;
+    top: 2px;
+    left: 2px;
+}
+
+
+.vmg_player_board_counters {
+    position: relative;
+    display: block;
+    width: 200px;
+    height: 35px;
+}
+.vmg_portal_count {
+    display: inline-block;
+    width: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    position: absolute;
+    top: 8px;
+    left: 0px;
+}.vmg_portal_icon {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 2px;
+    left: 8px; 
+    display: inline-block;
+    background: url('img/Icon_sprite.png') 0 0;    
+}
+.vmg_yellow_count {
+    display: inline-block;
+    width: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    position: absolute;
+    top: 8px;
+    left: 45px;
+}
+.vmg_yellow_icon {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 2px;
+    left: 53px;
+    display: inline-block;
+    background: url('img/Icon_sprite.png') -30px 0;    
+}
+.vmg_purple_count {
+    display: inline-block;
+    width: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    position: absolute;
+    top: 8px;
+    left: 90px;
+}.vmg_purple_icon {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 2px;
+    left: 98px;
+    display: inline-block;
+    background: url('img/Icon_sprite.png') -60px 0;    
+}
+.vmg_green_count {
+    display: inline-block;
+    width: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    position: absolute;
+    top: 8px;
+    left: 135px;
+}.vmg_green_icon {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 2px;
+    left: 143px;
+    display: inline-block;
+    background: url('img/Icon_sprite.png') -90px 0;    
+}
+.vmg_blue_count {
+    display: inline-block;
+    width: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    position: absolute;
+    top: 8px;
+    left: 180px;
+}
+.vmg_blue_icon {
+    width: 30px;
+    height: 30px;
+    top: 2px;
+    left: 188px;
+    position: absolute;
+    display: inline-block;
+    background: url('img/Icon_sprite.png') -120px 0;    
+}
+
+#vmg_placegem_reset_button {
+    display: inline-block;
+}
+#vmg_placegem_pass_button {
+    display: inline-block;
+}
+
+.vmg_incantatum {
+    position: absolute;
+    color: red;
+    font-size: 35px;
+    font-weight: bold;
+    top: 20px;
+    left: 10px;
+}
+
+.vmg_spin_portal {
+	-webkit-animation: vmg_ping 3s ease-in-out infinite both;
+	        animation: vmg_ping 3s ease-in-out infinite both;
+}
+
+.vmg_text-blur-out {
+	-webkit-animation: vmg_text-blur-out 6s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	        animation: vmg_text-blur-out 6s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+@keyframes vmg_heartbeat
+{
+  0%
+  {
+    transform: scale( .75 );
+  }
+  20%
+  {
+    transform: scale( 1 );
+  }
+  40%
+  {
+    transform: scale( .75 );
+  }
+  60%
+  {
+    transform: scale( 1 );
+  }
+  80%
+  {
+    transform: scale( .75 );
+  }
+  100%
+  {
+    transform: scale( .75 );
+  }
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2020-10-24 21:45:6
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation ping
+ * ----------------------------------------
+ */
+ @-webkit-keyframes vmg_ping {
+    0% {
+      -webkit-transform: scale(0.2);
+              transform: scale(0.2);
+      opacity: 0.8;
+    }
+    80% {
+      -webkit-transform: scale(1.2);
+              transform: scale(1.2);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: scale(2.2);
+              transform: scale(2.2);
+      opacity: 0;
+    }
+  }
+  @keyframes vmg_ping {
+    0% {
+      -webkit-transform: scale(0.2);
+              transform: scale(0.2);
+      opacity: 0.8;
+    }
+    80% {
+      -webkit-transform: scale(1.2);
+              transform: scale(1.2);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: scale(2.2);
+              transform: scale(2.2);
+      opacity: 0;
+    }
+  }
+  
+  /* ----------------------------------------------
+ * Generated by Animista on 2020-10-24 22:3:37
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation text-blur-out
+ * ----------------------------------------
+ */
+@-webkit-keyframes vmg_text-blur-out {
+    0% {
+      -webkit-filter: blur(0.01);
+              filter: blur(0.01);
+    }
+    100% {
+      -webkit-filter: blur(12px) opacity(0%);
+              filter: blur(12px) opacity(0%);
+    }
+  }
+  @keyframes vmg_text-blur-out {
+    0% {
+      -webkit-filter: blur(0.01);
+              filter: blur(0.01);
+    }
+    100% {
+      -webkit-filter: blur(12px) opacity(0%);
+              filter: blur(12px) opacity(0%);
+    }
+  }
+  
